@@ -87,11 +87,18 @@ babynames_sliced %>%
 ^[Question 4 complete]
 
 
-### 5 
+### Making a Collapsed String
 
 
 ```{r}
+babystring <- babynames_sliced %>%
+  pull(percent_year) %>%
+  str_flatten(collapse = ", ", last = ", and ")
 
+babystring %>%
+  str_view()
 
 ```
 
+
+^[Question 5 complete]
