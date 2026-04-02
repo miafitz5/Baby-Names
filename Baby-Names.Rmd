@@ -102,3 +102,15 @@ babystring %>%
 
 
 ^[Question 5 complete]
+
+
+### Gluing Strings  
+
+
+```{r, results= 'asis'}
+cat(str_glue("Out of all female names, the name Cora represented {babystring}."))
+
+```
+
+
+^[Question 6 complete]
