@@ -8,7 +8,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, warning = TRUE, message = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 library(knitr)
 library(tidyverse)
 library(babynames)
@@ -32,6 +32,7 @@ babynames2 %>%
 ```
 
 
+I load the babynames dataset and use mutate() to create a new column called prop_percent by multiplying the original prop by 100 and rounding the result to two decimal places. I then take the first six rows of this updated data and pass them into kable() to display a clean, formatted table.
 ^[Question 1 complete]
 
 
@@ -49,6 +50,7 @@ babynames3 %>%
 ```
 
 
+I take the babynames2 dataset and use mutate() with the str_glue() function to create a new column called percent_year that combines the prop_percent and year values into a single formatted string. I then select the first six rows of this updated data and pass them into kable() to display a table. 
 ^[Question 2 complete]
 
 
@@ -66,6 +68,7 @@ babynames4 %>%
 ```
 
 
+I take the babynames3 dataset and use filter() to create a new object called babynames4 that only includes rows where the name is "Cora" and the sex is "F". I then take the first six rows of this filtered data and pass them into kable() to display the results in a table.
 ^[Question 3 complete]
 
 
@@ -84,6 +87,7 @@ babynames_sliced %>%
 ```
 
 
+I start by using set.seed(42) and then take the babynames4 dataset and use slice_sample(n = 5) to randomly select five rows, followed by arrange(year) to sort those rows in chronological order. Finally, I pass this sampled and sorted data into kable() to display the results in a table.
 ^[Question 4 complete]
 
 
@@ -101,6 +105,7 @@ babystring %>%
 ```
 
 
+I take the babynames_sliced dataset and use pull() to extract the percent_year column. I use str_flatten() to merge those values into a single string, separating them with commas and adding ", and ". Finally, I pass this combined string into str_view() to display the resulting text in a formatted view.
 ^[Question 5 complete]
 
 
@@ -113,4 +118,5 @@ cat(str_glue("Out of all female names, the name Cora represented {babystring}.")
 ```
 
 
+I use str_glue() to create a sentence that embeds babystring into a specific text string about the name Cora. I then use cat() to print this final sentence, while the results='asis' chunk option ensures that the text is rendered as standard Markdown in my document.
 ^[Question 6 complete]
