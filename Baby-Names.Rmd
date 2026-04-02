@@ -67,3 +67,31 @@ babynames4 %>%
 
 
 ^[Question 3 complete]
+
+
+### Five Random Rows Using set.seed()
+
+
+```{r}
+set.seed(42)
+babynames_sliced <- babynames4 %>%
+  slice_sample(n = 5) %>%
+  arrange(year)
+
+babynames_sliced %>%
+  kable()
+
+```
+
+
+^[Question 4 complete]
+
+
+### 5 
+
+
+```{r}
+
+
+```
+
