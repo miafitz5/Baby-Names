@@ -50,3 +50,20 @@ babynames3 %>%
 
 
 ^[Question 2 complete]
+
+
+### Filtered For Specific Name and Sex
+
+
+```{r}
+babynames4 <- babynames3 %>%
+  filter(name == "Cora", sex == "F")
+
+babynames4 %>%
+  head(6) %>%
+  kable()
+
+```
+
+
+^[Question 3 complete]
